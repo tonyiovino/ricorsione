@@ -1,36 +1,37 @@
 #include <stdio.h>
 
-int potenza(int num);
+int potenza(int b, int e);
 
 int main(void){
     
-    int num;
+    int b;
+    int e;
 
     printf("Potenza\n\n");
 
+    printf("Inserisci la base: ");
+    scanf("%d", &b);
+
     do {
-        printf("Inserisci un numero: ");
-        scanf("%d", &num);
-    } while (num < 0);
+        printf("Inserisci l'esponente: ");
+        scanf("%d", &e);
+    }while (e < 0);
 
-    num = potenza(num);
-
-    printf("Potenza: %d", num);
+    printf("%d^%d = %d", b, e, potenza(b, e));
 
     putchar('\n');
 
     return 0;
 }
 
-int potenza(int num){
+int potenza(int b, int e){
 
-    static int esponente;
-
-    if (esponente == 1) {
-        return num;
+    if (e == 1) {
+        return b;
+    }
+    else if (e == 0) {
+        return 1;
     }
 
-    esponente--;
-
-    return num * potenza(num);
+    return b * potenza(b, e-1);
 }
