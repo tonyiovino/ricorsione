@@ -1,0 +1,12 @@
+CC=gcc
+CFLAGS=-Wall -ansi -pedantic
+LDLIBS=
+
+main: hanoi.o main.o
+
+main.o: main.c dado.h
+hanoi.o: hanoi.c hanoi.h
+
+.PHONY: clean
+clean:
+	rm -f *.o main
