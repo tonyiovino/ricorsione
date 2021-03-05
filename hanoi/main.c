@@ -15,7 +15,6 @@ int main(void){
     } while (num_dischi <= 0 && num_dischi > 30);
     putchar('\n');
 
-    printf("Passi: %d\n", hanoi__calcola_passi(num_dischi, 1));
     hanoi__sposta(num_dischi, 1, 3, 2);
 
     return 0;
