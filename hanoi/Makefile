@@ -4,7 +4,7 @@ LDLIBS=
 
 main: hanoi.o main.o
 
-main.o: main.c dado.h
+main.o: main.c hanoi.h
 hanoi.o: hanoi.c hanoi.h
 
 .PHONY: clean
