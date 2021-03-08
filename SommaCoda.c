@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int somma_step1(int a, int b, int parziale);
+int somma_step1_helper(int a, int b, int parziale);
+int somma_step1(int a, int b);
 
 int main(void){
 
@@ -16,15 +17,19 @@ int main(void){
 		if (b < 0) printf("NON deve essere negativo\n\n");
 	} while (b < 0);
 
-	somma = somma_step1(a, b, 0);
+	somma = somma_step1(a, b);
 	printf("Somma: %d\n", somma);
 
 	return 0;
 }
 
-int somma_step1(int a, int b, int parziale){
+int somma_step1(int a, int b){
+	return somma_step1_helper(a, b, 0);
+}
+
+int somma_step1_helper(int a, int b, int parziale){
 
 	if (b == 0) return parziale + a;
 
-	return somma_step1(a, b-1, parziale+1);
+	return somma_step1_helper(a, b-1, parziale+1);
 }
