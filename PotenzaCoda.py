@@ -3,13 +3,17 @@ def potenza(a, x):
 
 def potenza_helper(base, exp, parziale):
 
-	if (exp == 1):
+	if exp == 1:
 		return parziale * base
+	elif exp == 0:
+		return 1
 
 	return potenza_helper(base, exp-1, parziale*base)
 
 # main
-a, x = input("Inserisci la potenza (es. 3^2): ").split('^')
+e = 0
+while e < 0:
+	a, x = input("Inserisci la potenza (es. 3^2): ").split('^')
 
 a = int(a)
 x = int(x)

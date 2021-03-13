@@ -26,12 +26,8 @@ int main(void){
 
 int potenza(int b, int e){
 
-    if (e == 1) {
-        return b;
-    }
-    else if (e == 0) {
-        return 1;
-    }
+    if (e == 1) return b;
+    else if (e == 0) return 1;
 
     return b * potenza(b, e-1);
 }
