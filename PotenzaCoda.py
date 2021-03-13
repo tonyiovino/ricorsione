@@ -11,12 +11,12 @@ def potenza_helper(base, exp, parziale):
 	return potenza_helper(base, exp-1, parziale*base)
 
 # main
-e = 0
+e = -1
 while e < 0:
 	a, x = input("Inserisci la potenza (es. 3^2): ").split('^')
+	a = int(a)
+	x = int(x)
 
-a = int(a)
-x = int(x)
 
 power = potenza(a, x)
 
