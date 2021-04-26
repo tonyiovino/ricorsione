@@ -9,7 +9,7 @@ int main(void){
 
     for (i = 0; i < 10; i++) {
         n = fibonacci(i);
-        printf(" %d +", n);
+        printf("%d ", n);
     }
 
     putchar('\n');
